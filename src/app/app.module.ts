@@ -8,8 +8,8 @@ import {ErrorInterceptor, fakeBackendProvider, JwtInterceptor} from './_helpers'
 
 import { AppComponent } from './app.component';
 import { HomeComponent, LoginComponent, RegisterComponent, CartComponent } from './_pages';
-import { NavbarComponent } from './_components/navbar/navbar.component';
-import { AlertComponent } from './_components/alert/alert.component';
+import { NavbarComponent } from '@app/_components';
+import { AlertComponent } from '@app/_components';
 
 @NgModule({
   declarations: [
@@ -19,7 +19,7 @@ import { AlertComponent } from './_components/alert/alert.component';
     RegisterComponent,
     CartComponent,
     NavbarComponent,
-    AlertComponent
+    AlertComponent,
   ],
   imports: [
     BrowserModule,
