@@ -12,6 +12,7 @@ import { NavbarComponent } from '@app/_components';
 import { AlertComponent } from '@app/_components';
 import { ProductComponent } from '@app/_components';
 import { ElectronicComponent } from './_pages/electronic/electronic.component';
+import { JeweleryComponent } from './_pages/jewelery/jewelery.component';
 
 @NgModule({
   declarations: [
@@ -24,6 +25,7 @@ import { ElectronicComponent } from './_pages/electronic/electronic.component';
     AlertComponent,
     ProductComponent,
     ElectronicComponent,
+    JeweleryComponent,
   ],
   imports: [
     BrowserModule,

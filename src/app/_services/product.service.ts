@@ -19,7 +19,7 @@ export class ProductService {
     return this.http.get(`${this.baseUrl}`)
   }
 
-  getProductByI(productId: number) {
-
+  getJewelery(): Observable<any> {
+    return this.http.get(`${this.baseUrl}/category/jewelery`);
   }
 }
