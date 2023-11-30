@@ -18,4 +18,11 @@ export class ElectronicsComponent implements OnInit {
     })
   }
 
+  addToCart( product: Product) {
+    console.log(product, "this product is available to be added")
+    // this.productService.addProductToCart(product);
+     alert("Added to cart");
+
+  }
+
 }

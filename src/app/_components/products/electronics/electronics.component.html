@@ -1,7 +1,20 @@
-<div *ngFor="let product of products">
+<!-- <div *ngFor="let product of products">
   <img [src]="product.image" alt="product.title">
   <h2>{{product.title}}</h2>
   <p>{{product.description}}</p>
   <p>{{product.price}}</p>
+  <button type="button" (onclick)="addToCart(product)" class=" w-[100px] h-[50px] rounded bg-sky-800">add to Cart</button> -->
 <!--  <button (click)="addToCart(product)">Add to cart</button>-->
+<!-- </div> -->
+<div class="flex flex-wrap gap-5">
+<div class="w-[400px] h-[480px] relative shadow rounded" *ngFor="let product of products">
+  <div class="w-[400px] h-[480px] left-0 top-0 absolute bg-white rounded-[20px]"></div>
+  <div class="w-[172.09px] h-[60px] left-[200px] top-[409px] absolute">
+  <div class="w-[172.09px] h-[60px] left-0 top-0 absolute bg-sky-800 rounded-[20px] shadow"></div>
+  </div>
+  <div class="w-[84px] left-[244px] top-[429px] absolute text-white text-[13px] font-semibold font-['Poppins']">Add to Cart</div>
+  <div class="w-[338.82px] left-[17.25px] top-[321px] absolute text-center text-black text-[15px] font-medium font-['Poppins'] text-wrap capitalize">{{product.description}}</div>
+  <img class="w-[400px] h-[254px] left-0 top-0 absolute rounded-[20px]" [src]="product.image" alt="product.title" />
+  <div class="w-[366.27px] left-[17.25px] top-[276px] absolute text-black text-[23px] font-medium font-['Poppins']">{{product.title}}</div>
+  </div>
 </div>
