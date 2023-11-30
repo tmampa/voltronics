@@ -11,10 +11,10 @@ const usersModule = () => import('./_pages/users/users.module').then(x => x.User
 
 const routes: Routes = [
   { path: '', component : HomeComponent, canActivate: [AuthGuard] },
-  { path: 'electronics', component : ElectronicComponent },
-  { path: 'jewelery', component : JeweleryComponent },
-  { path: 'mens', component: MenComponent },
-  { path: 'womens', component: WomenComponent },
+  { path: 'electronics', component : ElectronicComponent, canActivate: [AuthGuard] },
+  { path: 'jewelery', component : JeweleryComponent, canActivate: [AuthGuard] },
+  { path: 'mens', component: MenComponent, canActivate: [AuthGuard] },
+  { path: 'womens', component: WomenComponent, canActivate: [AuthGuard] },
   { path: 'users', loadChildren: usersModule, canActivate: [AuthGuard] },
   { path: 'account/register', component : RegisterComponent },
   { path: 'account/login', component : LoginComponent },

@@ -13,7 +13,7 @@ export class WomenComponent implements OnInit {
   constructor(private productService: ProductService) { }
 
   ngOnInit() {
-    this.productService.getJewelery().subscribe((data: any) => {
+    this.productService.getWomensClothing().subscribe((data: any) => {
       this.women = data;
     });
   }
