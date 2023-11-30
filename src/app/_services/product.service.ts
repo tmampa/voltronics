@@ -12,7 +12,7 @@ export class ProductService {
   constructor(private http:HttpClient) { }
   baseUrl = 'https://fakestoreapi.com/products'
   getElectronics(): Observable<any> {
-    return this.http.get(`${this.baseUrl}/electronics`);
+    return this.http.get(`${this.baseUrl}/category/electronics`);
   }
 
   getAllProducts(): Observable<any> {

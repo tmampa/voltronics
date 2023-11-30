@@ -11,6 +11,7 @@ import { HomeComponent, LoginComponent, RegisterComponent, CartComponent } from 
 import { NavbarComponent } from '@app/_components';
 import { AlertComponent } from '@app/_components';
 import { ProductComponent } from '@app/_components';
+import { ElectronicComponent } from './_pages/electronic/electronic.component';
 
 @NgModule({
   declarations: [
@@ -22,6 +23,7 @@ import { ProductComponent } from '@app/_components';
     NavbarComponent,
     AlertComponent,
     ProductComponent,
+    ElectronicComponent,
   ],
   imports: [
     BrowserModule,
