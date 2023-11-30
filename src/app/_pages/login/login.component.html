@@ -1,30 +1,59 @@
-<div class="">
-  <div class="">
-    <h4 class="">Login</h4>
-    <div class="">
+<div class="flex flex-row w-[100%] h-[100vh]">
+  <!-- log-in images -->
+  <div class="w-[70%]">
+    <img src="../../../assets/images/sign-in.png" alt="">
+  </div>
+<!-- form used to sign-in -->
+<div class="w-[35%] h-[100vh] flex flex-col justify-center" >
+  
+    <!-- top text  -->
+    <div class=" h-[30vh] w-[100%] pt-[8%]">
+    <div class="text-neutral-600 text-[35px] font-medium font-['Poppins']">Welcome back!</div>
+    <div class="text-neutral-600 text-[23px] font-medium font-['Poppins']">Please enter your details</div>
+    </div>
+
+
+    <!-- middle -->
+    <div class=" h-[60vh] pt-[10%]">
       <form [formGroup]="form" (ngSubmit)="onSubmit()">
         <div class="">
-          <label class="">Username</label>
-          <input type="text" formControlName="username" class="" [ngClass]="{ 'is-invalid': submitted && f.username.errors }" />
-          <div *ngIf="submitted && f.username.errors" class="">
-            <div *ngIf="f.username.errors.required">Username is required</div>
+          <input type="text" 
+          formControlName="email" 
+          placeholder="email" 
+          class="border-b border-black-10 w-[60%] h-[50px] focus:outline-none" 
+          [ngClass]="{ 'is-invalid': submitted && f.email.errors }" />
+
+          <div *ngIf="submitted && f.email.errors" class="">
+            <div *ngIf="f.email.errors.required" class="text-red-300">Email is required</div>
           </div>
         </div>
         <div class="mb-3">
-          <label class="">Password</label>
-          <input type="password" formControlName="password" class="" [ngClass]="{ 'is-invalid': submitted && f.password.errors }" />
+          <input type="password" 
+          formControlName="password" 
+          placeholder="password"  
+          class="border-b border-black-10 w-[60%] h-[50px] focus:outline-none" 
+          [ngClass]="{ 'is-invalid': submitted && f.password.errors }" />
+
           <div *ngIf="submitted && f.password.errors" class="">
-            <div *ngIf="f.password.errors.required">Password is required</div>
+            <div *ngIf="f.password.errors.required" class="text-red-300">Password is required</div>
           </div>
         </div>
         <div>
-          <button [disabled]="loading" class="">
-            <span *ngIf="loading" class=""></span>
-            Login
-          </button>
-          <a routerLink="../register" class="">Register</a>
+          <div class="pt-[8%]">
+            <button  [disabled]="loading" 
+            class="w-[60%] h-[50px] bg-sky-800 rounded-[20px] shadow-2xl text-[#FFFFFF]"> 
+            <span *ngIf="loading" class="spinner spinner-white"></span>
+            <div class="text-white font-['Poppins'] ">Logn In</div>
+            </button>
+          </div>
         </div>
       </form>
-    </div>
-  </div>
+</div>
+
+<!-- bottom -->
+<div class="h-[10vh] items-bottom">
+  <span class="text-neutral-600 text-[20px] font-medium font-['Poppins']">Don’t have an account? </span>
+  <a routerLink="../register" class="text-neutral-600 text-[20px] font-semibold font-['Poppins']">Sign Up</a>
+</div>
+</div>
 </div>

@@ -9,6 +9,7 @@ import {AccountService} from "@app/_services";
 })
 export class NavbarComponent {
   user?: User | null;
+   pressed: boolean = false;
 
   constructor(private accountService: AccountService) {
     this.accountService.user.subscribe(x => this.user = x);
@@ -16,5 +17,9 @@ export class NavbarComponent {
 
   logout() {
     this.accountService.logout();
+  }
+
+  showUserMenu() {
+    this.pressed != this.pressed;
   }
 }
