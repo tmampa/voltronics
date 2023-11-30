@@ -22,4 +22,8 @@ export class ProductService {
   getJewelery(): Observable<any> {
     return this.http.get(`${this.baseUrl}/category/jewelery`);
   }
+
+  getMensClothing(): Observable<any> {
+    return this.http.get(`${this.baseUrl}/category/men's clothing`);
+  }
 }

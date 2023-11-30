@@ -13,6 +13,7 @@ import { AlertComponent } from '@app/_components';
 import { ProductComponent } from '@app/_components';
 import { ElectronicComponent } from './_pages/electronic/electronic.component';
 import { JeweleryComponent } from './_pages/jewelery/jewelery.component';
+import { MenComponent } from './_pages/men/men.component';
 
 @NgModule({
   declarations: [
@@ -26,6 +27,7 @@ import { JeweleryComponent } from './_pages/jewelery/jewelery.component';
     ProductComponent,
     ElectronicComponent,
     JeweleryComponent,
+    MenComponent,
   ],
   imports: [
     BrowserModule,

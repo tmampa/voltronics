@@ -4,6 +4,7 @@ import { HomeComponent, RegisterComponent, LoginComponent, CartComponent } from 
 import { AuthGuard } from "@app/_helpers";
 import {ElectronicComponent} from "@app/_pages/electronic/electronic.component";
 import {JeweleryComponent} from "@app/_pages/jewelery/jewelery.component";
+import {MenComponent} from "@app/_pages/men/men.component";
 
 const usersModule = () => import('./_pages/users/users.module').then(x => x.UsersModule);
 
@@ -11,6 +12,7 @@ const routes: Routes = [
   { path: '', component : HomeComponent, canActivate: [AuthGuard] },
   { path: 'electronics', component : ElectronicComponent },
   { path: 'jewelery', component : JeweleryComponent },
+  { path: 'mens', component: MenComponent },
   { path: 'users', loadChildren: usersModule, canActivate: [AuthGuard] },
   { path: 'account/register', component : RegisterComponent },
   { path: 'account/login', component : LoginComponent },
