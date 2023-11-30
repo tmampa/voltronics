@@ -10,7 +10,7 @@ import { AppComponent } from './app.component';
 import { HomeComponent, LoginComponent, RegisterComponent, CartComponent } from './_pages';
 import { NavbarComponent } from '@app/_components';
 import { AlertComponent } from '@app/_components';
-import { ElectronicsComponent } from '@app/_components';
+import { ProductComponent } from '@app/_components';
 
 @NgModule({
   declarations: [
@@ -21,7 +21,7 @@ import { ElectronicsComponent } from '@app/_components';
     CartComponent,
     NavbarComponent,
     AlertComponent,
-    ElectronicsComponent,
+    ProductComponent,
   ],
   imports: [
     BrowserModule,
