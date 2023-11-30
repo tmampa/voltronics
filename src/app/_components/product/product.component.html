@@ -1,6 +1,6 @@
-<div class="grid gap-6 grid-cols-4">
-  <div class="space-y-4 p-4 shadow rounded-[20px]" *ngFor="let product of products">
-    <img class="w-[400px] h-[254px]  rounded-[20px]" [src]="product.image" alt="product.title" />
+<div class="md:grid md:gap-6 md:grid-cols-4">
+  <div class="space-y-4 md:p-4 p-8 shadow rounded-[20px]" *ngFor="let product of products">
+    <img class="w-[400px] h-[254px] ml-4 object-contain" [src]="product.image" alt="product.title" />
     <h2 class="flex-wrap text-xl truncate font-semibold">{{product.title}}</h2>
     <p class="truncate">{{product.description}}</p>
     <div class="flex justify-between items-center bottom-0">
