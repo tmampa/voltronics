@@ -1,1 +1,14 @@
-<h1>Cart Page</h1>
+<div *ngFor="let product of cartItems">
+<div class="row">
+    <div class="col-md-2">
+      <img [src]="product.image" alt="product.name" class="img-responsive">
+    </div>
+    <div class="col-md-4">
+      <h4>{{product.name}}</h4>
+    </div>
+    <div class="col-md-2">
+      <button class="btn btn-danger" (click)="removeFromCart(product)">Remove</button>
+    </div>
+  </div>
+  <hr>
+</div>
