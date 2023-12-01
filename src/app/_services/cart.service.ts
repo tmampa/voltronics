@@ -18,14 +18,22 @@ export class CartService {
   }
 
   addToCart(product: any) {
-    this.cartItems.push(product);
+    const foundItem = this.cartItems.find(item => item.id === product.id);
+    if (foundItem) {
+      foundItem.quantity++;
+    } else {
+      this.cartItems.push({ ...product, quantity: 1 });
+    }
     this.updateLocalStorage();
   }
 
   removeFromCart(product: any) {
-    const index = this.cartItems.indexOf(product);
-    if (index > -1) {
-      this.cartItems.splice(index, 1);
+    const foundItem = this.cartItems.find(item => item.id === product.id);
+    if (foundItem) {
+      foundItem.quantity--;
+      if (foundItem.quantity === 0) {
+        this.cartItems = this.cartItems.filter(item => item.id !== product.id);
+      }
     }
     this.updateLocalStorage();
   }
@@ -33,6 +41,10 @@ export class CartService {
   clearCart() {
     this.cartItems = [];
     this.updateLocalStorage();
+  }
+
+  getTotalPrice() {
+    return this.cartItems.reduce((total, item) => total + item.price * item.quantity, 0);
   }
 
   private updateLocalStorage() {

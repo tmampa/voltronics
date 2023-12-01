@@ -9,19 +9,26 @@ import { CartService } from '@app/_services';
 export class CartComponent implements OnInit {
   cartItems: any[] = [];
 
-  constructor(private cartService: CartService) {
+  constructor(protected cartService: CartService) {
   }
 
   ngOnInit() {
+    this.loadCartItems();
+  }
+
+  loadCartItems() {
     this.cartItems = this.cartService.cartContents;
   }
 
   removeFromCart(product: any) {
     this.cartService.removeFromCart(product);
+    this.loadCartItems();
   }
 
   clearCart() {
     this.cartService.clearCart();
+    this.loadCartItems();
+
   }
 
 }
