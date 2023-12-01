@@ -47,6 +47,10 @@ export class CartService {
     return this.cartItems.reduce((total, item) => total + item.price * item.quantity, 0);
   }
 
+  getItemCount() {
+    return this.cartItems.reduce((total, item) => total + item.quantity, 0);
+  }
+
   private updateLocalStorage() {
     localStorage.setItem('cart', JSON.stringify(this.cartItems));
   }
