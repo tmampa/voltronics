@@ -44,7 +44,7 @@ export class CartService {
   }
 
   getTotalPrice() {
-    return this.cartItems.reduce((total, item) => total + item.price * item.quantity, 0);
+    return this.cartItems.reduce((total, item) => total + item.price * item.quantity, 0).toFixed(2);
   }
 
   getItemCount() {
