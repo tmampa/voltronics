@@ -7,7 +7,7 @@
     <p class="truncate">{{product.description}}</p>
     <div class="flex justify-between items-center bottom-0">
       <p class="text-base">$ {{product.price}}</p>
-      <button  type="button"  class="py-2 px-4 text-white w-[100px]h-[50px] bg-sky-800 rounded-[20px]">Add to
+      <button  type="button"  class="py-2 px-4 text-white w-[100px]h-[50px] bg-sky-800 rounded-[20px]" (click)="addProductToCart(product)">Add to
         Cart</button>
     </div>
   </div>
