@@ -15,6 +15,7 @@ import { ElectronicComponent } from './_pages/electronic/electronic.component';
 import { JeweleryComponent } from './_pages/jewelery/jewelery.component';
 import { MenComponent } from './_pages/men/men.component';
 import { WomenComponent } from './_pages/women/women.component';
+import { PaymentComponent} from "@app/_pages/payment/payment.component";
 
 @NgModule({
   declarations: [
@@ -30,6 +31,7 @@ import { WomenComponent } from './_pages/women/women.component';
     JeweleryComponent,
     MenComponent,
     WomenComponent,
+    PaymentComponent,
   ],
   imports: [
     BrowserModule,
