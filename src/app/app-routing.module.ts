@@ -11,16 +11,16 @@ import {PaymentComponent} from "@app/_pages/payment/payment.component";
 const usersModule = () => import('./_pages/users/users.module').then(x => x.UsersModule);
 
 const routes: Routes = [
-  { path: '', component : HomeComponent },
-  { path: 'electronics', component : ElectronicComponent },
-  { path: 'jewelery', component : JeweleryComponent },
-  { path: 'mens', component: MenComponent },
-  { path: 'womens', component: WomenComponent },
+  { path: '', component : HomeComponent, title: 'EasyBuy - SA Leading E-Commerce' },
+  { path: 'electronics', component : ElectronicComponent, title: 'EasyBuy - Electronics' },
+  { path: 'jewelery', component : JeweleryComponent, title: 'EasyBuy - Jewelery' },
+  { path: 'mens', component: MenComponent, title: 'EasyBuy - Men Fashion' },
+  { path: 'womens', component: WomenComponent, title: 'EasyBuy - Women Fashion' },
   { path: 'users', loadChildren: usersModule },
-  { path: 'account/register', component : RegisterComponent },
-  { path: 'account/login', component : LoginComponent },
-  { path: 'cart', component : CartComponent },
-    { path: 'payment', component: PaymentComponent, canActivate: [AuthGuard] },
+  { path: 'account/register', component : RegisterComponent, title: 'EasyBuy - Register' },
+  { path: 'account/login', component : LoginComponent, title: 'EasyBuy - Login' },
+  { path: 'cart', component : CartComponent, title: 'EasyBuy - Cart' },
+    { path: 'payment', component: PaymentComponent, canActivate: [AuthGuard], title: 'EasyBuy - Payment' },
   { path: '**', redirectTo: '' },
 
 
