@@ -6,8 +6,25 @@
   <base href="/">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <script src="https://kit.fontawesome.com/ecb918b976.js" crossorigin="anonymous"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            black: "black",
+            sky800: "#084C97",
+            neutral600: "#545454",
+            white: "FFFFFF",
+          },
+        },
+      },
+    }
+  </script>
 </head>
-<body>
+<body class="font-sans overscroll-none">
   <app-root></app-root>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.2.0/flowbite.min.js"></script>
 </body>
 </html>

@@ -1,1 +1,49 @@
-<h1>Login Page</h1>
+<div class="flex w-full h-screen">
+    <!-- Images block -->
+    <div class="w-1/2 bg-contain bg-no-repeat bg-center" style="background-image:
+    url('https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?q=80&w=1440&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')">
+    </div>
+
+    <!-- Sign in form -->
+    <div class="w-1/2 flex flex-col justify-center items-center bg-white text-black">
+        <!-- Welcome text -->
+        <div class="flex flex-col items-center mb-10">
+            <h1 class="font-['Poppins'] text-4xl">Welcome back!</h1>
+            <h2 class="font-['Poppins'] text-2xl mt-1">Please enter your details</h2>
+        </div>
+
+        <!-- Form -->
+        <form [formGroup]="form" (ngSubmit)="onSubmit()" class="w-2/3 space-y-4">
+            <input type="email"
+                   formControlName="email"
+                   placeholder="Email"
+                   class="w-full px-4 py-3 text-gray-800 bg-gray-200 rounded"
+                   [ngClass]="{ 'border-red-500': submitted && f.email.errors }">
+            <div *ngIf="submitted && f.email.errors" class="text-red-500">
+                <div *ngIf="f.email.errors.required">Email is required</div>
+            </div>
+
+            <input type="password"
+                   formControlName="password"
+                   placeholder="Password"
+                   class="w-full px-4 py-3 text-gray-800 bg-gray-200 rounded"
+                   [ngClass]="{ 'border-red-500': submitted && f.password.errors }">
+            <div *ngIf="submitted && f.password.errors" class="text-red-500">
+                <div *ngIf="f.password.errors.required">Password is required</div>
+            </div>
+
+            <button type="submit"
+                    [disabled]="loading"
+                    class="w-full px-4 py-3 text-white bg-sky-800 rounded hover:bg-sky-700 focus:outline-none">
+                Log In
+                <span *ngIf="loading" class="spinner spinner-white"></span>
+            </button>
+        </form>
+
+        <!-- Bottom text -->
+        <div class="flex mt-3 text-sm text-gray-600">
+            <span>Don’t have an account? </span>
+            <a routerLink="../register" class="font-['Poppins'] font-semibold text-sky-800 ml-1">Sign Up</a>
+        </div>
+    </div>
+</div>

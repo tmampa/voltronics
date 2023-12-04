@@ -1,0 +1,14 @@
+<div class="md:grid md:gap-6 md:grid-cols-4">
+  <div class="space-y-4 md:p-4 p-8 shadow rounded-[20px] hover:scale-110 cursor-pointer duration-700	" *ngFor="let
+  product of
+  products">
+    <img class="w-[400px] h-[254px] ml-4 object-contain" [src]="product.image" alt="product.title" />
+    <h2 class="flex-wrap text-xl truncate font-semibold">{{product.title}}</h2>
+    <p class="truncate">{{product.description}}</p>
+    <div class="flex justify-between items-center bottom-0">
+      <p class="text-base">$ {{product.price}}</p>
+      <button  type="button"  class="py-2 px-4 text-white w-[100px]h-[50px] bg-sky-800 rounded-[20px]" (click)="addProductToCart(product)">Add to
+        Cart</button>
+    </div>
+  </div>
+</div>
