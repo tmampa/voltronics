@@ -15,6 +15,8 @@ import { ElectronicComponent } from './_pages/electronic/electronic.component';
 import { JeweleryComponent } from './_pages/jewelery/jewelery.component';
 import { MenComponent } from './_pages/men/men.component';
 import { WomenComponent } from './_pages/women/women.component';
+import { PaymentComponent} from "@app/_pages/payment/payment.component";
+import {NgOptimizedImage} from "@angular/common";
 
 @NgModule({
   declarations: [
@@ -30,13 +32,15 @@ import { WomenComponent } from './_pages/women/women.component';
     JeweleryComponent,
     MenComponent,
     WomenComponent,
+    PaymentComponent,
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    ReactiveFormsModule,
-    HttpClientModule
-  ],
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        ReactiveFormsModule,
+        HttpClientModule,
+        NgOptimizedImage
+    ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
     { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true },

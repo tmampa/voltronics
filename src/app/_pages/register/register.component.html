@@ -1,81 +1,58 @@
-<div class="flex flex-row w-[100%] h-[100vh] justify-center items-center">
-<!-- form used to sign-in -->
-<div class="w-[40%] h-[100vh] flex flex-col justify-center items-center" >
-  
-    <!-- top text  -->
-    <div class=" h-[25vh] w-[100%] pt-[8%] items-center justify-center px-[10%]">
-    <div class="text-neutral-600 text-[35px] font-medium font-['Poppins']">Get Started</div>
-    <div class="text-neutral-600 text-[23px] font-medium font-['Poppins']">Create your account now</div>
+<div class="flex w-full h-screen">
+    <!-- Registration form -->
+    <div class="w-1/2 flex flex-col justify-center items-center bg-white text-black">
+        <!-- Welcome text -->
+        <div class="mb-10 text-center">
+            <h1 class="font-['Poppins'] text-4xl">Get Started!</h1>
+            <h2 class="font-['Poppins'] text-2xl mt-1">Create your account now</h2>
+        </div>
+
+        <!-- Form -->
+        <form [formGroup]="form" (ngSubmit)="onSubmit()" class="w-3/4 space-y-4">
+            <input type="text" formControlName="firstName" placeholder="First Name"
+                   class="w-full px-4 py-2 text-black border-b-2 border-gray-300 focus:outline-none bg-gray-100"
+                   [ngClass]="submitted && f.firstName.errors ? 'border-red-500' : ''">
+            <div *ngIf="submitted && f.firstName.errors" class="text-red-500">
+                <div *ngIf="f.firstName.errors.required">First Name is required</div>
+            </div>
+
+            <input type="text" formControlName="lastName" placeholder="Last Name"
+                   class="w-full px-4 py-2 text-black border-b-2 border-gray-300 focus:outline-none bg-gray-100"
+                   [ngClass]="submitted && f.lastName.errors ? 'border-red-500' : ''">
+            <div *ngIf="submitted && f.lastName.errors" class="text-red-500">
+                <div *ngIf="f.lastName.errors.required">Last Name is required</div>
+            </div>
+
+            <input type="email" formControlName="email" placeholder="Email"
+                   class="w-full px-4 py-2 text-black border-b-2 border-gray-300 focus:outline-none bg-gray-100"
+                   [ngClass]="submitted && f.email.errors ? 'border-red-500' : ''">
+            <div *ngIf="submitted && f.email.errors" class="text-red-500">
+                <div *ngIf="f.email.errors.required">Email is required</div>
+            </div>
+
+            <input type="password" formControlName="password" placeholder="Password"
+                   class="w-full px-4 py-2 text-black border-b-2 border-gray-300 focus:outline-none bg-gray-100"
+                   [ngClass]="submitted && f.password.errors ? 'border-red-500' : ''">
+            <div *ngIf="submitted && f.password.errors" class="text-red-500">
+                <div *ngIf="f.password.errors.required">Password is required</div>
+            </div>
+
+            <button type="submit" [disabled]="loading"
+                    class="w-full py-2 text-white bg-sky-800 hover:bg-sky-700 focus:outline-none">Sign Up</button>
+
+            <div *ngIf="loading" class="mt-3 text-center text-blue-500">
+                <span>Please wait...</span>
+            </div>
+        </form>
+
+        <!-- Bottom text -->
+        <div class="mt-3 text-sm">
+            <span class="text-black">Have an account? </span>
+            <a routerLink="../login" class="text-sky-800">Log In</a>
+        </div>
     </div>
 
-
-    <!-- middle -->
-    <div class=" h-[65vh] pt-[10%] w-[100%]  px-[10%]">
-      <form [formGroup]="form" (ngSubmit)="onSubmit()">
-        <div class="">
-          <input type="text" 
-          formControlName="firstName" 
-          placeholder="firstName" 
-          class="border-b border-black-10 w-[60%] h-[50px] focus:outline-none" 
-          [ngClass]="{ 'is-invalid': submitted && f.firstName.errors }" />
-
-          <div *ngIf="submitted && f.firstName.errors" class="">
-            <div *ngIf="f.firstName.errors.required" class="text-red-300">first Name is required</div>
-          </div>
-        </div>
-        <div class="">
-          <input type="text" 
-          formControlName="lastName" 
-          placeholder="lastName" 
-          class="border-b border-black-10 w-[60%] h-[50px] focus:outline-none" 
-          [ngClass]="{ 'is-invalid': submitted && f.lastName.errors }" />
-
-          <div *ngIf="submitted && f.lastName.errors" class="">
-            <div *ngIf="f.lastName.errors.required" class="text-red-300">last Name is required</div>
-          </div>
-        </div>
-        <div class="">
-          <input type="text" 
-          formControlName="email" 
-          placeholder="email" 
-          class="border-b border-black-10 w-[60%] h-[50px] focus:outline-none" 
-          [ngClass]="{ 'is-invalid': submitted && f.email.errors }" />
-
-          <div *ngIf="submitted && f.email.errors" class="">
-            <div *ngIf="f.email.errors.required" class="text-red-300">Email is required</div>
-          </div>
-        </div>
-        <div class="mb-3">
-          <input type="password" 
-          formControlName="password" 
-          placeholder="password"  
-          class="border-b border-black-10 w-[60%] h-[50px] focus:outline-none" 
-          [ngClass]="{ 'is-invalid': submitted && f.password.errors }" />
-
-          <div *ngIf="submitted && f.password.errors" class="">
-            <div *ngIf="f.password.errors.required" class="text-red-300">Password is required</div>
-          </div>
-        </div>
-        <div>
-          <div class="pt-[8%]">
-            <button  [disabled]="loading" 
-            class="w-[60%] h-[50px] bg-sky-800 rounded-[20px] shadow-2xl text-[#FFFFFF]"> 
-            <span *ngIf="loading" class="spinner spinner-white"></span>
-            <div class="text-white font-['Poppins'] ">Sign Up</div>
-            </button>
-          </div>
-        </div>
-      </form>
-</div>
-
-<!-- bottom -->
-<div class="h-[10vh] items-bottom items-center justify-center px-[10%]">
-  <span class="text-neutral-600 text-[20px] font-medium font-['Poppins']">Have an account?</span>
-  <a routerLink="../register" class="text-neutral-600 text-[20px] font-semibold font-['Poppins']"> create account</a>
-</div>
-</div>
-  <!-- log-in images -->
-  <div class="w-[60%]">
-    <img src="../../../assets/images/sign-in.png" alt="" class="w-[100%]">
-  </div>
+    <!-- Registration images -->
+    <div class="w-1/2 bg-contain bg-no-repeat bg-center" style="background-image:
+    url('https://plus.unsplash.com/premium_photo-1683288446478-d998f96592e0?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D)"></div>
 </div>
