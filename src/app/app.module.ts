@@ -17,6 +17,7 @@ import { MenComponent } from './_pages/men/men.component';
 import { WomenComponent } from './_pages/women/women.component';
 import { PaymentComponent} from "@app/_pages/payment/payment.component";
 import {NgOptimizedImage} from "@angular/common";
+import { FooterComponent } from './_components/footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -33,6 +34,7 @@ import {NgOptimizedImage} from "@angular/common";
     MenComponent,
     WomenComponent,
     PaymentComponent,
+    FooterComponent,
   ],
     imports: [
         BrowserModule,
